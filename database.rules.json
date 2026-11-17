@@ -1,0 +1,20 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid && data.child('status').val() === 'active'",
+        "profile": { ".write": false },
+        "devices": {
+          ".read": "auth != null && auth.uid === $uid && data.parent().parent().child('status').val() === 'active'",
+          "$deviceId": {
+            ".write": "auth != null && auth.uid === $uid && data.exists() && newData.child('platform').val() === data.child('platform').val() && newData.child('appId').val() === data.child('appId').val() && newData.child('isOnline').isBoolean() && newData.child('lastSeenAt').isNumber()"
+          }
+        },
+        "role": { ".write": false },
+        "status": { ".write": false }
+      }
+    }
+  }
+}

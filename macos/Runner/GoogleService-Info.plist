@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>353093272532-ac35vebquq1lmeub7djrhk8ljimff1pk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.353093272532-ac35vebquq1lmeub7djrhk8ljimff1pk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>353093272532-hc0f757pb8m27rh30naub4sl8mjv9ll5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3pJpNdilk_ETvaaaSDBJDrhMGDNSsw_A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>353093272532</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.at.flashdialWeb</string>
+	<key>PROJECT_ID</key>
+	<string>flashdial</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flashdial.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:353093272532:ios:04e5f4c37d0c7e4b0c4c41</string>
+	<key>DATABASE_URL</key>
+	<string>https://flashdial-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
