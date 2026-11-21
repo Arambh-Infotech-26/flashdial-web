@@ -5,15 +5,24 @@
     "users": {
       "$uid": {
         ".read": "auth != null && auth.uid === $uid && data.child('status').val() === 'active'",
-        "profile": { ".write": false },
-        "devices": {
-          ".read": "auth != null && auth.uid === $uid && data.parent().parent().child('status').val() === 'active'",
-          "$deviceId": {
-            ".write": "auth != null && auth.uid === $uid && data.exists() && newData.child('platform').val() === data.child('platform').val() && newData.child('appId').val() === data.child('appId').val() && newData.child('isOnline').isBoolean() && newData.child('lastSeenAt').isNumber()"
-          }
+        "email": {
+          ".write": "auth != null && auth.uid === $uid && newData.isString() && newData.val() === auth.token.email"
         },
-        "role": { ".write": false },
-        "status": { ".write": false }
+        "role": {
+          ".write": "auth != null && auth.uid === $uid && ((!data.parent().exists() && newData.val() === 'user') || (data.exists() && newData.val() === data.val()))",
+          ".validate": "newData.val() === 'user' || newData.val() === 'admin'"
+        },
+        "status": {
+          ".write": "auth != null && auth.uid === $uid && ((!data.parent().exists() && newData.val() === 'active') || (data.exists() && newData.val() === data.val()))",
+          ".validate": "newData.val() === 'invited' || newData.val() === 'active' || newData.val() === 'suspended' || newData.val() === 'disabled'"
+        },
+        "devices": {
+          ".read": "auth != null && auth.uid === $uid && root.child('users').child($uid).child('status').val() === 'active'",
+          "$deviceId": {
+            ".write": "auth != null && auth.uid === $uid && root.child('users').child($uid).child('status').val() === 'active' && ((!newData.exists() && data.exists()) || (newData.exists() && newData.child('platform').val() === 'android' && newData.child('appId').val() === 'com.at.flashdial' && newData.child('isOnline').isBoolean() && newData.child('lastSeenAt').isNumber()))",
+            ".validate": "!newData.exists() || (newData.child('platform').val() === 'android' && newData.child('appId').val() === 'com.at.flashdial' && newData.child('isOnline').isBoolean() && newData.child('lastSeenAt').isNumber())"
+          }
+        }
       }
     }
   }

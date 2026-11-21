@@ -15,7 +15,9 @@ users/{uid}
 users/{uid}/devices/{deviceId}
 ```
 
-Deploy `database.rules.json` with the Firebase CLI after reviewing the temporary mobile presence write rule. It only permits updates to an existing device record and keeps platform/app identity immutable. User roles, account status, and device authorization remain trusted-admin responsibilities.
+After completing mobile setup, tap **Start service**. The mobile app creates the profile for a new Firebase account or refreshes the existing active profile, replaces older device records for that account, and starts its live presence heartbeat. The web app can then sign in with the same Firebase account and display the phone.
+
+Deploy `database.rules.json` with the Firebase CLI after reviewing the mobile bootstrap policy. New mobile profiles are created as `role: user` and `status: active`; existing role and status values cannot be changed by the mobile client. Device identity remains fixed to Android FlashDial records, and older devices are replaced when service is started on a new phone.
 
 ## Run
 

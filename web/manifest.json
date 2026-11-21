@@ -1,11 +1,11 @@
 {
-    "name": "flashdial_web",
-    "short_name": "flashdial_web",
+    "name": "FlashDial Web",
+    "short_name": "FlashDial",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A smart web-based calling dashboard that lets you initiate and manage calls remotely through your connected Android device, with real-time call status and seamless call control",
+    "background_color": "#07142B",
+    "theme_color": "#F47B20",
+    "description": "A secure dashboard for your connected FlashDial Android phone.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
